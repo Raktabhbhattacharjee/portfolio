@@ -1,0 +1,44 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    font-size: 62.5%;
+}
+body{
+    background-color: #141414;
+    color: #F5F5F5;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.left{
+    font-size: 3rem;
+    font-weight: bold;
+}
+li a{
+    text-decoration: none;
+    color: #F5F5F5;  
+
+}
+li{
+    list-style: none;
+}
+nav{
+    background-color: #222222;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 61px;
+    padding: 10px 20px;
+    font-size: 1.7rem;
+
+
+}
+.right ul{
+    display: flex;
+    justify-content: center;
+  gap: 2rem;
+}
+a:hover{
+    color: lightgray;
+}
