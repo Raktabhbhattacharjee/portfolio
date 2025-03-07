@@ -1,116 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 /* RESET & BASE STYLES */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  html {
-    font-size: 62.5%; /* 1rem = 10px */
-  }
-  
-  body {
-    background-color: #141414;
-    color: #F5F5F5;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-  }
-  
-  /* NAVIGATION BAR STYLES */
-  nav {
-    background-color: #222222;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    min-height: 61px;
-    padding: 1rem 2rem;
-    font-size: 1.7rem;
-  }
-  
-  /* BRANDING */
-  .left {
-    font-size: 3rem;
-    font-weight: bold;
-  }
-  
-  /* NAVIGATION LINKS */
-  .right ul {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-  }
-  
-  li {
-    list-style: none;
-  }
-  
-  li a {
-    text-decoration: none;
-    color: #F5F5F5;
-    transition: color 0.3s ease;
-  }
-  
-  a:hover {
-    color: lightgray;
-  }
-  
-  /* RESPONSIVE STYLES */
-  
-  /* Tablet and small desktop screens */
-  @media (max-width: 768px) {
-    nav {
-      flex-direction: column;
-      font-size: 1.5rem;
-    }
-    .left {
-      margin-bottom: 1rem;
-      font-size: 2.5rem;
-    }
-    .right ul {
-      flex-direction: column;
-      gap: 1.5rem;
-      width: 100%;
-      padding: 1rem 0;
-      text-align: center;
-    }
-  }
-  
-  /* Mobile devices */
-  @media (max-width: 480px) {
-    html {
-      font-size: 55%; /* slightly reduce the base font size for tighter space */
-    }
-    nav {
-      padding: 10px;
-      font-size: 1.4rem;
-    }
-    .left {
-      font-size: 2.2rem;
-    }
-    .right ul {
-      gap: 1rem;
-    }
-  }
-.container h1{
-     display: flex;
-     justify-content: center;
-      margin: 14.3rem auto;
-      font-size: 5.5rem
-      
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
+
+html {
+  font-size: 62.5%; /* 1rem = 10px */
+}
+
+body {
+  background-color: #141414;
+  color: #F5F5F5;
+  font-family: "Noto Sans", sans-serif;
+
+}
+
+/* NAVIGATION BAR STYLES */
+nav {
+  background-color: #222222;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 61px;
+  padding: 1rem 2rem;
+  font-size: 1.7rem;
+}
+
+/* BRANDING */
+.left {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+/* NAVIGATION LINKS */
+.right ul {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+li {
+  list-style: none;
+}
+
+li a {
+  text-decoration: none;
+  color: #F5F5F5;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: lightgray;
+}
+
+/* RESPONSIVE STYLES for Navigation */
+/* Tablet and small desktop screens */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    font-size: 1.5rem;
+  }
+  .left {
+    margin-bottom: 1rem;
+    font-size: 2.5rem;
+  }
+  .right ul {
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
+    padding: 1rem 0;
+    text-align: center;
+  }
+}
+
+/* Mobile devices */
+@media (max-width: 480px) {
+  html {
+    font-size: 55%; /* Slightly reduce the base font size for tighter space */
+  }
+  nav {
+    padding: 10px;
+    font-size: 1.4rem;
+  }
+  .left {
+    font-size: 2.2rem;
+  }
+  .right ul {
+    gap: 1rem;
+  }
+}
+
+.container h1 {
+  display: flex;
+  justify-content: center;
+  margin: 14.3rem auto;
+  font-size: 5.5rem;
+}
+
+/* GRID SECTION STYLES */
 .grid-section {
-  display: grid; /* Enables grid layout */
-  grid-template-columns: 1fr 1fr; /* Creates two equal-width columns */
-  gap: 20px; /* Adds space between the grid items */
-  padding: 20px; /* Adds padding around the content */
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two equal columns */
+  gap: 5rem;
+  font-size: 1.5rem;
+ 
+  padding: 2rem;
 }
 
 .grid-section p {
-  grid-column: 1 / 2; /* Places <p> in the first column */
+  grid-column: 1 / 2;
 }
 
 .grid-section h2 {
-  grid-column: 2 / 3; /* Places <h2> in the second column */
-  text-align: center; /* Centers text within the grid cell */
-  margin-top: -2rem; /* Moves the heading slightly upwards */
+  grid-column: 2 / 3;
+  text-align: center;
+  margin-top: -2rem;
+  margin-left: 15rem; /* Provides space from the paragraph */
 }
 
+/* Responsive Adjustments for Grid Section */
+@media (max-width: 600px) {
+  .grid-section {
+    grid-template-columns: 1fr; /* Stack elements vertically */
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .grid-section h2 {
+    margin-top: 0; /* Reset top margin for stacked layout */
+    margin-left: 0; /* Remove left margin for a cleaner look on narrow screens */
+    text-align: left; /* Optional: align text to left for readability */
+  }
+}
