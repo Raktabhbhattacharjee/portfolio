@@ -1,43 +1,35 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
-/* RESET & BASE STYLES */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 html {
-  font-size: 62.5%; /* 1rem = 10px */
+  font-size: 62.5%; /* 1rem = 10px remains unchanged */
 }
 
 body {
   background-color: #141414;
   color: #F5F5F5;
   font-family: "Noto Sans", sans-serif;
-
+  font-size: 1.8rem; /* Increased font size for body text */
+  line-height: 1.6;
+  padding: 0;
+  margin: 0;
 }
 
 /* NAVIGATION BAR STYLES */
 nav {
   background-color: #222222;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
-  min-height: 61px;
   padding: 1rem 2rem;
   font-size: 1.7rem;
 }
 
-/* BRANDING */
 .left {
   font-size: 3rem;
   font-weight: bold;
+  color: #F5F5F5;
 }
 
-/* NAVIGATION LINKS */
 .right ul {
   display: flex;
-  justify-content: center;
   gap: 2rem;
 }
 
@@ -48,89 +40,106 @@ li {
 li a {
   text-decoration: none;
   color: #F5F5F5;
-  transition: color 0.3s ease;
+  transition: color 0.3s ease-in-out;
 }
 
-a:hover {
+li a:hover {
   color: lightgray;
 }
 
-/* RESPONSIVE STYLES for Navigation */
-/* Tablet and small desktop screens */
-@media (max-width: 768px) {
-  nav {
-    flex-direction: column;
-    font-size: 1.5rem;
-  }
-  .left {
-    margin-bottom: 1rem;
-    font-size: 2.5rem;
-  }
-  .right ul {
-    flex-direction: column;
-    gap: 1.5rem;
-    width: 100%;
-    padding: 1rem 0;
-    text-align: center;
-  }
-}
-
-/* Mobile devices */
-@media (max-width: 480px) {
-  html {
-    font-size: 55%; /* Slightly reduce the base font size for tighter space */
-  }
-  nav {
-    padding: 10px;
-    font-size: 1.4rem;
-  }
-  .left {
-    font-size: 2.2rem;
-  }
-  .right ul {
-    gap: 1rem;
-  }
-}
-
-.container h1 {
+/* Main container: uses flexbox to center the section and adds general padding */
+.flex {
   display: flex;
   justify-content: center;
-  margin: 14.3rem auto;
-  font-size: 5.5rem;
-}
-
-/* GRID SECTION STYLES */
-.grid-section {
-  display: grid;
-  grid-template-columns: 1fr 1fr; /* Two equal columns */
-  gap: 5rem;
-  font-size: 1.5rem;
- 
+  align-items: center;
   padding: 2rem;
 }
 
-.grid-section p {
-  grid-column: 1 / 2;
+/* Section: uses flexbox to arrange content in a column with padding */
+.flex section {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  padding: 2rem;
 }
 
-.grid-section h2 {
-  grid-column: 2 / 3;
-  text-align: center;
-  margin-top: -2rem;
-  margin-left: 15rem; /* Provides space from the paragraph */
+/* flex properties added for alignment */ 
+.flex section h1 {
+  display: flex;
+  align-items: center;
+  padding: 1.2rem;
+  margin: 0;
 }
 
-/* Responsive Adjustments for Grid Section */
-@media (max-width: 600px) {
-  .grid-section {
-    grid-template-columns: 1fr; /* Stack elements vertically */
-    width: 100%;
+/* Optional: apply padding to the column container */
+.flex section .col {
+  padding: 1.2rem;
+}
+
+/* Social Media Styles */
+.social-media {
+  display: flex;
+  justify-content: center;  /* Center the links horizontally */
+  align-items: center;      /* Center the links vertically */
+  gap: 1.5rem;              /* Space between the links */
+  padding: 2rem;            /* Padding around the container */
+}
+
+.social-media a {
+  padding: 0.8rem 1.2rem;
+  background-color: #222222;
+  color: #F5F5F5;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.social-media a:hover {
+  background-color: #333333;
+}
+
+/* Responsive Media Queries */
+
+/* For tablets and moderate screen sizes */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
     padding: 1rem;
   }
+  
+  .left {
+    font-size: 2.5rem;
+  }
+  
+  .right ul {
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  
+  /* Stack main sections vertically */
+  .flex {
+    flex-direction: column;
+  }
+}
 
-  .grid-section h2 {
-    margin-top: 0; /* Reset top margin for stacked layout */
-    margin-left: 0; /* Remove left margin for a cleaner look on narrow screens */
-    text-align: left; /* Optional: align text to left for readability */
+/* For mobile devices */
+@media (max-width: 480px) {
+  html {
+    font-size: 55%;  /* Slightly decrease the base font size for smaller screens */
+  }
+  
+  nav {
+    padding: 1rem;
+    font-size: 1.5rem;
+  }
+  
+  .left {
+    font-size: 2.2rem;
+  }
+  
+  /* Social media links stack vertically on very small screens */
+  .social-media {
+    flex-direction: column;
+    gap: 1rem;
   }
 }
