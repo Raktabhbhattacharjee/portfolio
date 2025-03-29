@@ -1,14 +1,14 @@
-/* Global styles */
 :root {
   /* Define color variables */
-  --bg-gradient-start: #e0e1dd;
-  --bg-gradient-end: #d6d7d4;
-  --text-color: #565655;
-  --nav-bg: #0d1b2a;
-  --nav-text: whitesmoke;
-  --link-hover-bg: #565655;
-  --primary-color: #0d1b2a;
-  --button-hover-bg: #565655;
+  --bg-gradient-start: #f2f4f6; /* Light, soft gray for background */
+  --bg-gradient-end: #dbe2e8;   /* Slightly darker gray for gradient effect */
+  --text-color: #3c4043;        /* Neutral dark gray for body text */
+  --nav-bg: #283e4a;            /* Muted navy for navigation background */
+  --nav-text: #e5e7eb;          /* Light gray for navigation text */
+  --link-hover-bg: #3d5a6c;     /* Subtle teal-gray for hover background */
+  --primary-color: #395268;     /* Muted steel blue for headings and primary elements */
+  --button-hover-bg: #4a6a80;   /* Slightly darker steel blue for button hover */
+  --accent-color: #53687a;      /* Complementary muted teal-gray accent */
 }
 
 * {
@@ -60,7 +60,7 @@ nav ul li a {
   padding: 0.5rem 1rem;
   border-radius: 5px;
   text-decoration: none;
-  color:var(--nav-text)
+  color: var(--nav-text); /* Correctly added semi-colon */
 }
 
 nav ul li a:hover {
