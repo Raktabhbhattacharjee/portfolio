@@ -1,4 +1,16 @@
 /* Global styles */
+:root {
+  /* Define color variables */
+  --bg-gradient-start: #e0e1dd;
+  --bg-gradient-end: #d6d7d4;
+  --text-color: #565655;
+  --nav-bg: #0d1b2a;
+  --nav-text: whitesmoke;
+  --link-hover-bg: #565655;
+  --primary-color: #0d1b2a;
+  --button-hover-bg: #565655;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -10,23 +22,10 @@ html {
 }
 
 body {
-  background-color: #e0e1dd;
-  color: #565655;
+  background: linear-gradient(135deg, var(--bg-gradient-start), var(--bg-gradient-end));
+  color: var(--text-color);
   font-family: sans-serif;
   line-height: 1.5;
-
-}
-
-/* Anchor styles */
-a {
-  color: wheat;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-a:hover {
-  text-decoration: underline;
-  color: #f0f0f0; /* Subtle hover effect */
 }
 
 /* Navigation styles */
@@ -34,23 +33,22 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
- padding: 2rem 3rem; /* Added horizontal padding */
-  background-color: #0d1b2a;
-  
+  padding: 2rem 3rem;
+  background-color: var(--nav-bg);
   position: sticky;
   top: 0;
-  z-index: 1; /* Ensures it stays above other content */
+  z-index: 1;
 }
 
 .left {
-  color: whitesmoke;
+  color: var(--nav-text);
   font-size: 2rem;
-  font-weight: bold; /* Adds emphasis */
+  font-weight: bold;
 }
 
 nav ul {
   display: flex;
-  gap: 2rem; /* Creates space between links */
+  gap: 2rem;
   list-style: none;
 }
 
@@ -59,26 +57,71 @@ nav ul li {
 }
 
 nav ul li a {
-  padding: 0.5rem 1rem; /* Add clickable area for links */
-  border-radius: 5px; /* Adds rounded corners for consistency */
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  text-decoration: none;
+  color:var(--nav-text)
 }
 
 nav ul li a:hover {
-  background-color: #1c2d41; /* Adds a hover background */
+  background-color: var(--link-hover-bg);
 }
 
-/* content styling  */
-#about{
+/* Container styles */
+.container {
   display: flex;
-  flex-direction: column;
+  flex-direction: column; /* Stack items vertically */
   align-items: center;
-  color: rgb(224, 225, 221);
-  font-size: 1.5rem;
-  background-color: #1b263b;
-  border-radius: 1.5rem 2rem;
-  padding: 3rem;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  justify-content: center;
+  padding: clamp(2rem, 5vw, 6rem); /* Responsive padding */
+  max-width: clamp(600px, 80%, 1200px); /* Constrain width, scales with screen size */
+  margin: clamp(2rem, 5vw, 4rem) auto; /* Adds vertical gap with responsiveness */
+  gap: clamp(1rem, 2vw, 3rem); /* Spacing between elements, responsive */
   text-align: center;
-  margin: 4rem auto;
-  max-width: 50rem;
+}
+
+.container h2 {
+  font-size: clamp(2rem, 4vw, 4.8rem); /* Responsive heading size */
+  color: var(--primary-color);
+}
+
+.container p {
+  font-size: clamp(1.6rem, 2vw, 2.2rem); /* Responsive paragraph size */
+  color: var(--text-color);
+  margin-top: clamp(1rem, 2vw, 2rem); /* Responsive gap above paragraph */
+  margin-bottom: clamp(1rem, 2vw, 2rem); /* Responsive gap below paragraph */
+  line-height: 1.8;
+}
+
+.download-btn {
+  padding: clamp(0.8rem, 1vw, 1.5rem) clamp(1.5rem, 3vw, 3rem); /* Responsive button padding */
+  font-size: clamp(1.4rem, 2vw, 1.8rem); /* Responsive button font size */
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-bottom: 1rem;
+}
+
+.download-btn:hover {
+  background-color: var(--button-hover-bg);
+}
+
+/* Social links */
+.social-links {
+  display: flex;
+  gap: clamp(1rem, 3vw, 4rem); /* Responsive spacing between links */
+}
+
+.social-links a {
+  font-size: clamp(1.4rem, 2vw, 1.6rem); /* Responsive link size */
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: var(--link-hover-bg);
 }
