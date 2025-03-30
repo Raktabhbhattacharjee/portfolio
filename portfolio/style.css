@@ -33,7 +33,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 2rem 3rem;
+  padding: clamp(1rem, 3dvw, 3rem) clamp(1.5rem, 4dvw, 5rem); /* More fluid padding */
   background-color: var(--nav-bg);
   position: sticky;
   top: 0;
@@ -42,27 +42,25 @@ nav {
 
 .left {
   color: var(--nav-text);
-  font-size: 2rem;
+  font-size: clamp(1.8rem, 3dvw, 2.5rem); /* More responsive logo font size */
   font-weight: bold;
 }
 
 nav ul {
   display: flex;
-  gap: 2rem;
+  flex-wrap: wrap; /* Wrap links on smaller screens */
+  gap: clamp(1rem, 3dvw, 2rem); /* Fluid spacing between links */
   list-style: none;
 }
 
-nav ul li {
-  font-size: 1.6rem;
-}
-
 nav ul li a {
-  padding: 0.5rem 1rem;
+  font-size: clamp(1.6rem, 2vw, 2.4rem); /* Dynamically adjusts font size */
+  padding: clamp(0.4rem, 1.5vw, 1rem) clamp(0.8rem, 2vw, 1.5rem); /* Responsive padding */
   border-radius: 5px;
   text-decoration: none;
-  color: var(--nav-text); /* Correctly added semi-colon */
+  color: var(--nav-text);
+  transition: background-color 0.3s ease;
 }
-
 nav ul li a:hover {
   background-color: var(--link-hover-bg);
 }
@@ -73,50 +71,56 @@ nav ul li a:hover {
   flex-direction: column; /* Stack items vertically */
   align-items: center;
   justify-content: center;
-  padding: clamp(2rem, 5vw, 6rem); /* Responsive padding */
-  max-width: clamp(600px, 80%, 1200px); /* Constrain width, scales with screen size */
-  margin: clamp(2rem, 5vw, 4rem) auto; /* Adds vertical gap with responsiveness */
-  gap: clamp(1rem, 2vw, 3rem); /* Spacing between elements, responsive */
+  padding: clamp(2rem, 5dvw, 6rem); /* Adjust padding for all screens */
+  max-width: min(90%, 1200px); /* Constrain width but allow flexibility */
+  margin: clamp(2rem, 5dvw, 4rem) auto; /* Responsive vertical margins */
+  gap: clamp(1rem, 2dvw, 3rem); /* Dynamic spacing between elements */
   text-align: center;
 }
 
-.container h2 {
-  font-size: clamp(2rem, 4vw, 4.8rem); /* Responsive heading size */
+.container h1 {
+  font-size: clamp(2.4rem, 6dvw, 5rem); /* Responsive heading size */
   color: var(--primary-color);
+  font-weight: 700;
+  box-shadow: 2rem,2rem,1.5rem,1.5rem,var(--bg-gradient-end);
 }
 
 .container p {
-  font-size: clamp(1.6rem, 2vw, 2.2rem); /* Responsive paragraph size */
+  font-size: clamp(1.6rem, 2dvw, 2.2rem); /* Adaptive paragraph size */
   color: var(--text-color);
-  margin-top: clamp(1rem, 2vw, 2rem); /* Responsive gap above paragraph */
-  margin-bottom: clamp(1rem, 2vw, 2rem); /* Responsive gap below paragraph */
-  line-height: 1.8;
+  margin-top: clamp(1rem, 2dvw, 2rem); /* Responsive top gap */
+  margin-bottom: clamp(1rem, 2dvw, 2rem); /* Responsive bottom gap */
+  line-height: clamp(1.8, 2.5vw, 2.2); /* Adjust line spacing based on screen size */
 }
 
 .download-btn {
-  padding: clamp(0.8rem, 1vw, 1.5rem) clamp(1.5rem, 3vw, 3rem); /* Responsive button padding */
-  font-size: clamp(1.4rem, 2vw, 1.8rem); /* Responsive button font size */
+  padding: clamp(0.8rem, 1.5dvw, 1.5rem) clamp(1.5rem, 3dvw, 3rem); /* Fluid button padding */
+  font-size: clamp(1.4rem, 2dvw, 1.8rem); /* Dynamic button text size */
   background-color: var(--primary-color);
   color: #fff;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  margin-bottom: 1rem;
+  margin-bottom: clamp(1rem, 2dvw, 2rem); /* Adjust button's bottom margin */
 }
 
 .download-btn:hover {
   background-color: var(--button-hover-bg);
+  transform: scale(1.05,1.05);
+  box-shadow: 50% 40% 75% 80% 85% var(--nav-bg);
+  
 }
 
 /* Social links */
 .social-links {
   display: flex;
-  gap: clamp(1rem, 3vw, 4rem); /* Responsive spacing between links */
+  flex-wrap: wrap; /* Allows wrapping for links on small screens */
+  gap: clamp(1rem, 2.5dvw, 3rem); /* Responsive spacing between links */
 }
 
 .social-links a {
-  font-size: clamp(1.4rem, 2vw, 1.6rem); /* Responsive link size */
+  font-size: clamp(1.4rem, 2dvw, 1.8rem); /* Dynamic link font size */
   color: var(--primary-color);
   text-decoration: none;
   transition: color 0.3s ease;
@@ -124,4 +128,59 @@ nav ul li a:hover {
 
 .social-links a:hover {
   color: var(--link-hover-bg);
+}
+h2{
+  text-align: center;
+  font-size: 3.4rem;
+}
+/* General Grid Container */
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two equal columns */
+  gap: clamp(2rem, 3vw, 4rem); /* Space between cards */
+  padding: clamp(2rem, 5vw, 6rem); /* Responsive padding */
+  max-width: 1200px; /* Center content with a max width */
+  margin: 0 auto; /* Center horizontally */
+}
+
+/* Card Styles */
+.card {
+  background-color: var(--bg-gradient-start);
+  box-shadow: 0 0 2rem rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  padding: clamp(1.5rem, 4vw, 3rem); /* Responsive inner padding */
+}
+
+.card h3 {
+  font-size: clamp(2rem, 3vw, 2.4rem); /* Responsive heading size */
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+.card p {
+  font-size: clamp(1.6rem, 2vw, 1.8rem); /* Paragraph size */
+  line-height: inherit;
+  color: var(--text-color);
+}
+
+/* Skills Section Inside Card */
+.skills-list {
+  display: flex;
+  flex-wrap: wrap; /* Ensures skills wrap to new lines */
+  gap: 1rem; /* Space between skill tags */
+  margin-top: 1rem;
+}
+
+.skills-list span {
+  background-color: var(--accent-color);
+  color: var(--link-hover-bg);
+  padding: 0.8rem 1.2rem;
+  font-size: clamp(1.4rem, 2vw, 1.6rem); /* Scales skill text size */
+  font-weight: bold;
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.15); /* Shadow effect */
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.skills-list span:hover {
+  transform: scale(1.1); /* Slight zoom effect */
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
 }
