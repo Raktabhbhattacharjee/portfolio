@@ -1,14 +1,14 @@
 :root {
-  /* Define color variables */
-  --bg-gradient-start: #f2f4f6; /* Light, soft gray for background */
-  --bg-gradient-end: #dbe2e8;   /* Slightly darker gray for gradient effect */
-  --text-color: #3c4043;        /* Neutral dark gray for body text */
-  --nav-bg: #283e4a;            /* Muted navy for navigation background */
-  --nav-text: #e5e7eb;          /* Light gray for navigation text */
-  --link-hover-bg: #3d5a6c;     /* Subtle teal-gray for hover background */
-  --primary-color: #395268;     /* Muted steel blue for headings and primary elements */
-  --button-hover-bg: #4a6a80;   /* Slightly darker steel blue for button hover */
-  --accent-color: #53687a;      /* Complementary muted teal-gray accent */
+  --bg-gradient-start: #0A0F1E; /* Deep cosmic navy */
+  --bg-gradient-mid: #141A2F;  /* A subtle transition shade */
+  --bg-gradient-end: #232C4B;  /* Space-like depth */
+
+  --text-primary: #D8DDE7; /* Soft light gray-blue for easy reading */
+  --text-secondary: #AEB4C5; /* Muted contrast for subtler elements */
+
+  --nav-bg: #1B2239; /* Darkened navy for professional depth */
+  --nav-text: #E5E7EB; /* Light gray for clarity */
+  --accent-color: #48556E; /* A muted steel-blue accent */
 }
 
 * {
@@ -22,8 +22,8 @@ html {
 }
 
 body {
-  background: linear-gradient(135deg, var(--bg-gradient-start), var(--bg-gradient-end));
-  color: var(--text-color);
+  background: linear-gradient(160deg, var(--bg-gradient-start), var(--bg-gradient-mid), var(--bg-gradient-end)); /* Deep space gradient */
+  color: var(--text-primary); /* Soft light gray-blue for readability */
   font-family: sans-serif;
   line-height: 1.5;
 }
@@ -34,7 +34,7 @@ nav {
   justify-content: space-between;
   align-items: center;
   padding: clamp(1rem, 3dvw, 3rem) clamp(1.5rem, 4dvw, 5rem); /* More fluid padding */
-  background-color: var(--nav-bg);
+  /* background-color: var(--nav-bg); */
   position: sticky;
   top: 0;
   z-index: 1;
@@ -61,6 +61,7 @@ nav ul li a {
   color: var(--nav-text);
   transition: background-color 0.3s ease;
 }
+
 nav ul li a:hover {
   background-color: var(--link-hover-bg);
 }
@@ -77,12 +78,14 @@ nav ul li a:hover {
   gap: clamp(1rem, 2dvw, 3rem); /* Dynamic spacing between elements */
   text-align: center;
 }
-
+h2{
+  text-align: center;
+}
 .container h1 {
   font-size: clamp(2.4rem, 6dvw, 5rem); /* Responsive heading size */
   color: var(--primary-color);
   font-weight: 700;
-  box-shadow: 2rem,2rem,1.5rem,1.5rem,var(--bg-gradient-end);
+  box-shadow: 2rem, 2rem, 1.5rem, 1.5rem, var(--bg-gradient-end);
 }
 
 .container p {
@@ -93,6 +96,7 @@ nav ul li a:hover {
   line-height: clamp(1.8, 2.5vw, 2.2); /* Adjust line spacing based on screen size */
 }
 
+/* Download button */
 .download-btn {
   padding: clamp(0.8rem, 1.5dvw, 1.5rem) clamp(1.5rem, 3dvw, 3rem); /* Fluid button padding */
   font-size: clamp(1.4rem, 2dvw, 1.8rem); /* Dynamic button text size */
@@ -107,9 +111,8 @@ nav ul li a:hover {
 
 .download-btn:hover {
   background-color: var(--button-hover-bg);
-  transform: scale(1.05,1.05);
-  box-shadow: 50% 40% 75% 80% 85% var(--nav-bg);
-  
+  transform: scale(1.05);
+  box-shadow: 0 0 1rem var(--nav-bg);
 }
 
 /* Social links */
@@ -129,14 +132,11 @@ nav ul li a:hover {
 .social-links a:hover {
   color: var(--link-hover-bg);
 }
-h2{
-  text-align: center;
-  font-size: 3.4rem;
-}
+
 /* General Grid Container */
 .grid-container {
   display: grid;
-  grid-template-columns: 1fr 1fr; /* Two equal columns */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Two equal columns */
   gap: clamp(2rem, 3vw, 4rem); /* Space between cards */
   padding: clamp(2rem, 5vw, 6rem); /* Responsive padding */
   max-width: 1200px; /* Center content with a max width */
@@ -145,24 +145,24 @@ h2{
 
 /* Card Styles */
 .card {
-  background-color: var(--bg-gradient-start);
-  box-shadow: 0 0 2rem rgba(0, 0, 0, 0.1); /* Subtle shadow */
-  padding: clamp(1.5rem, 4vw, 3rem); /* Responsive inner padding */
+  background: linear-gradient(160deg, #12182A, #1E223B, #2B3158, #3D4E7F); /* Deep space hues */
+  box-shadow: 0 0 3rem rgba(0, 0, 0, 0.25); /* Stronger depth for an immersive look */
+  padding: clamp(1.5rem, 4vw, 3rem);
+  border-radius: 1rem; /* Smooth edges for a modern touch */
 }
 
 .card h3 {
-  font-size: clamp(2rem, 3vw, 2.4rem); /* Responsive heading size */
-  color: var(--primary-color);
+  font-size: clamp(2rem, 3vw, 2.4rem);
+  color: #BCC7E0; /* Light, soft gray for readability */
   margin-bottom: 0.5rem;
 }
 
 .card p {
-  font-size: clamp(1.6rem, 2vw, 1.8rem); /* Paragraph size */
-  line-height: inherit;
-  color: var(--text-color);
+  font-size: clamp(1.6rem, 2vw, 1.8rem);
+  color: #A8B1C8; /* Balanced contrast for eye comfort */
 }
 
-/* Skills Section Inside Card */
+/* Skills Section */
 .skills-list {
   display: flex;
   flex-wrap: wrap; /* Ensures skills wrap to new lines */
@@ -171,16 +171,16 @@ h2{
 }
 
 .skills-list span {
-  background-color: var(--accent-color);
+  background: linear-gradient(135deg, #0A192F, #1C1E26);
   color: var(--link-hover-bg);
   padding: 0.8rem 1.2rem;
-  font-size: clamp(1.4rem, 2vw, 1.6rem); /* Scales skill text size */
+  font-size: clamp(1.4rem, 2vw, 1.6rem);
   font-weight: bold;
-  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.15); /* Shadow effect */
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.15);
   transition: box-shadow 0.2s ease, transform 0.2s ease;
 }
 
 .skills-list span:hover {
-  transform: scale(1.1); /* Slight zoom effect */
-  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+  transform: scale(1.1);
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
 }
