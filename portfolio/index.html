@@ -10,12 +10,15 @@
     <header>
       <nav>
         <div class="left">Raktabh Bhattacharjee</div>
-        <ul>
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#connect">Connect</a></li>
-        </ul>
+
+        <div class="nav-container">
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#connect">Connect</a></li>
+          </ul>
+        </div>
       </nav>
     </header>
     <main>
@@ -37,12 +40,11 @@
       </section>
 
       <!-- About Section -->
-      <h2>Let's Introduce About Myself</h2>
+      <h2 class="first-header">Let's Introduce About Myself</h2>
       <section id="about-skills" class="grid-container">
         <!-- About Myself Card -->
-
         <div class="card about">
-          <h3>Hello there</h3>
+          <h3 class="card-header">Hello there</h3>
           <p>
             I am Raktabh Bhattacharjee, a passionate beginner in web development
             with a keen interest in crafting responsive and visually appealing
@@ -55,7 +57,7 @@
 
         <!-- My Skills Card -->
         <div class="card skills">
-          <h3>My Skills</h3>
+          <h3 class="card-header">My Skills</h3>
           <div class="skills-list">
             <span>HTML</span>
             <span>CSS</span>
@@ -66,25 +68,41 @@
             <span>Version Control (Git)</span>
             <span>UI/UX Fundamentals</span>
             <span>Problem Solving</span>
+            <span>Python</span>
+            <span>SQL</span>
           </div>
         </div>
-      </section>
-      <section id="contact">
-        <h2>Contact Me</h2>
-        <form action="#" method="post">
-          <label for="name">Name:</label>
-          <input type="text" id="name" name="name" required>
-          
-          <label for="email">Email:</label>
-          <input type="email" id="email" name="email" required>
-          
-          <label for="message">Message:</label>
-          <textarea id="message" name="message" required></textarea>
-          
-          <button type="submit">Send Message</button>
-        </form>
-      </section>
-     
+      </section> <!-- Closed About & Skills Section -->
+      <section id="contact" class="contact-container">
+        <div class="contact-form">
+            <h2>Get in Touch</h2>
+            <form action="#" method="POST">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required />
+    
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required />
+    
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+    
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </section>
+    <footer>
+      <div class="footer-container">
+        <p>© 2025 Raktabh Bhattacharjee | All Rights Reserved</p>
+        <p>Contact: <a href="tel:+91XXXXXXXXXX">+91 XXXXX XXXXX</a></p>
+        <p>Email: <a href="mailto:raktabh@example.com">raktabh@example.com</a></p>
+        <p>
+          Connect with me:
+          <a href="https://linkedin.com/in/raktabh" target="_blank">LinkedIn</a> |
+          <a href="https://github.com/raktabh" target="_blank">GitHub</a> |
+          <a href="https://twitter.com/raktabh" target="_blank">Twitter</a>
+        </p>
+      </div>
+    </footer>
     </main>
   </body>
 </html>
